@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مراعي تيماء | لحوم طازجة وذبائح — ذبح حلال وتوصيل مبرد</title>
+<meta name="description" content="مراعي تيماء: ذبائح نعيمي وحري وتيوس وعجول طازجة، ذبح حلال يدوي، تقطيع على ذوقك، وتوصيل مبرد لباب البيت.">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1d3b2a;--g2:#2d5a40;--gold:#c8923a;--sand:#f3efe6;--ink:#1b1f1c;--mut:#667068;--line:#e3ded2;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Tajawal,Tahoma,sans-serif;color:var(--ink);background:var(--w);line-height:1.7}
+a{color:inherit;text-decoration:none}
+button,select,input{font:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 18px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.top{background:var(--g);color:#fff;font-size:14px;padding:7px 0;text-align:center}
+header{position:sticky;top:0;z-index:20;background:var(--w);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-weight:800;font-size:22px;color:var(--g)}
+.logo small{display:block;font-size:12px;font-weight:500;color:var(--mut);line-height:1}
+nav{display:flex;gap:26px}
+nav a{font-weight:500}nav a:hover{color:var(--gold)}
+.cartbtn{background:var(--g);color:#fff;border:0;border-radius:10px;padding:9px 16px;cursor:pointer;font-weight:700}
+.cartbtn span{background:var(--gold);border-radius:20px;padding:0 8px;margin-right:6px}
+.menu{display:none;background:none;border:0;font-size:26px;cursor:pointer}
+/* slider */
+.slider{position:relative;overflow:hidden;background:var(--g)}
+.slide{display:none;min-height:420px;align-items:center;color:#fff;background:linear-gradient(120deg,var(--g) 40%,var(--g2))}
+.slide.on{display:flex}
+.slide .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;width:100%}
+.slide h1,.slide h2{font-size:clamp(28px,4.4vw,48px);line-height:1.25;margin-bottom:12px}
+.slide p{max-width:480px;opacity:.9;margin-bottom:22px}
+.art{font-size:150px;text-align:center;filter:drop-shadow(0 12px 20px #0006)}
+.btn{display:inline-block;background:var(--gold);color:#1b1305;font-weight:800;padding:12px 26px;border-radius:10px;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.dots button{width:10px;height:10px;border-radius:50%;border:0;background:#fff6;cursor:pointer}
+.dots button.on{background:var(--gold)}
+/* sections */
+section{padding:56px 0}
+.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px;gap:12px;flex-wrap:wrap}
+.head h2{font-size:30px;color:var(--g)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--w);border-radius:30px;padding:6px 18px;cursor:pointer}
+.tabs button.on{background:var(--g);color:#fff;border-color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;background:var(--w)}
+.card .img{height:170px;display:grid;place-items:center;font-size:76px;background:var(--sand)}
+.card .b{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:18px}
+.card .w{font-size:13px;color:var(--mut)}
+.price{font-size:20px;font-weight:800;color:var(--g)}
+.card select{border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--w)}
+.card .btn{margin-top:auto;width:100%;padding:9px}
+/* banners */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bn{border-radius:16px;padding:34px;min-height:200px;display:flex;flex-direction:column;justify-content:center;gap:8px;align-items:flex-start}
+.bn h3{font-size:26px}
+.bn.a{background:var(--sand)}
+.bn.b2{background:var(--g2);color:#fff}
+.wide{background:linear-gradient(110deg,var(--g),#143022);color:#fff;border-radius:18px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.wide h2{font-size:30px}
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feat div{text-align:center;padding:24px 14px;border:1px solid var(--line);border-radius:14px}
+.feat i{font-style:normal;font-size:40px;display:block;margin-bottom:6px}
+.feat h3{font-size:18px;margin-bottom:4px}
+.feat p{font-size:14px;color:var(--mut)}
+.news{background:var(--sand);text-align:center}
+.news form{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.news input{padding:11px 16px;border:1px solid var(--line);border-radius:10px;min-width:260px}
+footer{background:var(--g);color:#dfe8e1;padding:44px 0 18px}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:26px}
+footer h4{color:#fff;margin-bottom:10px}
+footer li{list-style:none;font-size:15px;margin-bottom:4px}
+footer a:hover{color:var(--gold)}
+.copy{border-top:1px solid #ffffff22;margin-top:28px;padding-top:14px;font-size:13px;text-align:center}
+/* cart */
+.ov{position:fixed;inset:0;background:#0007;display:none;z-index:40}
+.ov.on{display:block}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(400px,100%);background:var(--w);z-index:41;transform:translateX(-100%);transition:transform .25s;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;padding:16px;border-bottom:1px solid var(--line);font-weight:800}
+.dh button{background:none;border:0;font-size:24px;cursor:pointer}
+.items{flex:1;overflow:auto;padding:12px 16px}
+.it{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.it small{display:block;color:var(--mut)}
+.it button{border:0;background:none;color:#b3261e;cursor:pointer}
+.df{padding:16px;border-top:1px solid var(--line)}
+.tot{display:flex;justify-content:space-between;font-weight:800;margin-bottom:10px}
+.df .btn{width:100%;text-align:center}
+.empty{color:var(--mut);text-align:center;padding:40px 0}
+.toast{position:fixed;bottom:22px;right:50%;transform:translateX(50%) translateY(90px);background:var(--ink);color:#fff;padding:10px 22px;border-radius:30px;transition:.25s;z-index:60}
+.toast.on{transform:translateX(50%)}
+@media(max-width:900px){.grid,.feat{grid-template-columns:repeat(2,1fr)}.two,.fg{grid-template-columns:1fr}.slide .wrap{grid-template-columns:1fr;text-align:center}.slide p{margin-inline:auto}.art{font-size:90px;order:-1}}
+@media(max-width:640px){nav{display:none;position:absolute;top:68px;right:0;left:0;background:var(--w);flex-direction:column;padding:14px 18px;border-bottom:1px solid var(--line)}nav.on{display:flex}.menu{display:block}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* product + checkout */
+.crumb{font-size:14px;color:var(--mut);padding:18px 0 6px}
+.crumb a{color:var(--gold);font-weight:700}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;padding-bottom:50px}
+.pimg{background:var(--sand);border-radius:16px;padding:26px;display:grid;place-items:center;font-size:150px;min-height:340px;position:sticky;top:84px}
+.box{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--w)}
+.box+.box{margin-top:16px}
+.box h3{border-right:4px solid var(--gold);padding-right:10px;margin-bottom:14px;color:var(--g);font-size:19px}
+.pt{font-size:26px;font-weight:800}
+.pp{font-size:30px;font-weight:800;color:var(--gold);margin:4px 0 10px}
+.sub{font-weight:700;margin:16px 0 8px}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.opt{border:1px solid var(--line);background:#fafafa;border-radius:10px;padding:14px 8px;cursor:pointer;text-align:center;min-height:56px}
+.opt.on{border:2px solid var(--gold);background:#fbf5e8;color:#8a5f14;font-weight:700}
+.note{background:#fff8dc;border:1px solid #f0dc8a;border-radius:10px;padding:10px 14px;font-size:14px;margin-top:8px}
+.qty{display:flex;align-items:center;gap:12px;margin:16px 0}
+.qty button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--w);font-size:20px;cursor:pointer}
+.big{width:100%;padding:15px;font-size:18px;border-radius:30px;background:linear-gradient(90deg,var(--gold),#a8741f);color:#fff}
+.co{display:grid;grid-template-columns:1.4fr 1fr;gap:22px;padding-bottom:50px;align-items:start}
+.f{display:grid;gap:6px;margin-bottom:12px}
+.f label{font-size:14px;font-weight:700}
+.f input,.f textarea{border:1px solid var(--line);border-radius:10px;padding:11px;width:100%}
+.two2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.loc{background:var(--gold);color:#fff;border:0;border-radius:8px;padding:8px 16px;cursor:pointer}
+.warn{color:#b3261e;font-size:13px;margin-top:6px}
+.sum{position:sticky;top:84px}
+.sr{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.sr small{display:block;color:var(--mut)}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px;margin:12px 0}
+@media(max-width:900px){.pg,.co,.two2{grid-template-columns:1fr}.pimg{position:static;font-size:100px;min-height:220px}.sum{position:static}}
+.opt.off{opacity:.55;cursor:not-allowed;text-decoration:line-through;background:#eee}
+.opt.off small{display:inline-block;margin-right:6px;color:#b3261e;font-size:12px}
+.card.offc .img{filter:grayscale(1);opacity:.6}
+.btn[disabled]{background:#ccc;color:#555;cursor:not-allowed;filter:none}
+.ad{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.ad label{display:flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:9px 12px;cursor:pointer}
+.ad label.x{background:#fdeceb;border-color:#f3b8b4}
+#out{width:100%;min-height:90px;direction:ltr;font-family:monospace;border:1px solid var(--line);border-radius:10px;padding:10px}
+.ad label span{flex:1}
+.pi{width:90px;border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+.oh{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.oh span{color:var(--mut);font-size:13px;margin-inline-start:auto}
+.ord{margin-bottom:14px}.ord.st-new{border-color:var(--gold);border-width:2px}.ord.st-canceled{opacity:.6}
+.ord a{color:var(--gold);font-weight:700}
+.aerr{color:#b3261e;font-size:14px;margin-top:8px}
+.savebar{position:sticky;bottom:0;background:var(--w);padding:12px 0;border-top:1px solid var(--line);margin-top:16px}
+</style>
+</head>
+<body>
+<div class="top">توصيل مبرد داخل تيماء خلال ٤ ساعات — الطلب قبل الساعة ٨ مساءً يصل بنفس اليوم</div>
+<header>
+ <div class="wrap bar">
+  <a href="#/" class="logo">مراعي تيماء<small>لحوم طازجة · ذبح حلال</small></a>
+  <nav id="nav">
+   <a href="#/">الرئيسية</a><a href="#/products">المنتجات</a><a href="#/how">طريقة الطلب</a><a href="#/why">لماذا نحن</a><a href="#/contact">تواصل معنا</a>
+  </nav>
+  <div style="display:flex;gap:8px;align-items:center">
+   <button class="cartbtn" id="openCart" aria-label="فتح السلة">السلة<span id="cnt">0</span></button>
+   <button class="menu" id="menu" aria-label="القائمة">☰</button>
+  </div>
+ </div>
+</header>
+<main id="homeView">
+
+<div class="slider" id="home">
+ <div class="slide on"><div class="wrap"><div>
+  <h1>من مراعي تيماء إلى مائدتكم طازجًا</h1>
+  <p>ذبائح نعيمي وحري وتيوس بلدية تُذبح يوم طلبك، تُقطّع على ذوقك، وتصلك مبردة لباب البيت. لا تجميد ولا وسطاء.</p>
+  <a class="btn" href="#/products">تصفح الذبائح</a></div><div class="art">🐑</div></div></div>
+ <div class="slide"><div class="wrap"><div>
+  <h2>عرض اليوم: نعيمي بلدي كامل بـ <span id="heroP">1,150 ر.س</span></h2>
+  <p>الوزن التقريبي 16–18 كجم، شامل الذبح والتقطيع والتوصيل. مذبوحة يوم الطلب.</p>
+  <a class="btn" href="#/products">اطلب الآن</a></div><div class="art">🏷️</div></div></div>
+ <div class="slide"><div class="wrap"><div>
+  <h2>قطّعها كما تحب</h2>
+  <p>مفطح، أرباع، مقطع وسط، أو مفروم. اختر الطريقة قبل الإضافة للسلة.</p>
+  <a class="btn" href="#/how">كيف أطلب؟</a></div><div class="art">🔪</div></div></div>
+ <div class="dots" id="dots"></div>
+</div>
+
+<section id="products"><div class="wrap">
+ <div class="head"><h2>منتجاتنا</h2>
+  <div class="tabs" id="tabs"><button class="on" data-c="all">الكل</button><button data-c="najdi">نجدي</button><button data-c="hari">حري</button><button data-c="naimi">نعيمي</button><button data-c="teos">تيوس</button></div></div>
+ <div class="grid" id="grid"></div>
+ <p style="margin-top:14px;color:var(--mut);font-size:14px">الأسعار شاملة ضريبة القيمة المضافة. اختر الحجم والتقطيع والتغليف من صفحة كل ذبيحة.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <div class="two">
+  <div class="bn a"><h3>لحوم طازجة</h3><p>ذبائح سليمة بإشراف بيطري ومتوافقة مع أحدث معايير السلامة.</p><a class="btn" href="#/products">تسوق الآن</a></div>
+  <div class="bn b2"><h3>تجهيز وتغليف</h3><p>تغليف صحي مفرّغ من الهواء، وخيارات تجهيز تناسب مناسبتك.</p><a class="btn" href="#/products">تسوق الآن</a></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <div class="wide"><div><h2>توصيل سريع بسيارات مبردة</h2><p>تصلك ذبيحتك طازجة في سيارات مبردة من ٠ إلى ٤ درجات، خلال ٤ ساعات داخل تيماء.</p></div><a class="btn" href="#/products">تسوق الآن</a></div>
+</div></section>
+
+<section id="how" style="background:var(--sand)"><div class="wrap">
+ <div class="head"><h2>طريقة الطلب</h2></div>
+ <div class="feat">
+  <div><i>🛒</i><h3>اختر وقطّع على ذوقك</h3><p>أضف الذبيحة للسلة وحدد طريقة التقطيع.</p></div>
+  <div><i>💬</i><h3>أكّد عبر واتساب</h3><p>يصلنا طلبك مفصلًا ونؤكد الموعد والعنوان.</p></div>
+  <div><i>🔪</i><h3>نذبح بعد التأكيد</h3><p>ذبح حلال يدوي في مسلخ مرخّص.</p></div>
+  <div><i>🚚</i><h3>استلم مبردًا</h3><p>الدفع عند الاستلام أو تحويل.</p></div>
+ </div>
+</div></section>
+
+<section id="why"><div class="wrap">
+ <div class="head"><h2>مميزاتنا</h2></div>
+ <div class="feat">
+  <div><i>🌾</i><h3>مواشٍ بلدية من مراعينا</h3><p>تُربّى في تيماء على الشعير والبرسيم بلا هرمونات.</p></div>
+  <div><i>✅</i><h3>ذبح حلال بإشراف بيطري</h3><p>فحص بيطري لكل ذبيحة قبل التسليم.</p></div>
+  <div><i>❄️</i><h3>سلسلة تبريد كاملة</h3><p>من المسلخ إلى بابك دون انقطاع.</p></div>
+  <div><i>↩️</i><h3>استرجاع بلا نقاش</h3><p>إن لم يعجبك اللحم نرجّع لك المبلغ كاملًا.</p></div>
+ </div>
+</div></section>
+
+<section class="news"><div class="wrap">
+ <h2 style="color:var(--g)">اشترك ليصلك كل جديد</h2>
+ <p>اكتب رقم جوالك ليصلك أحدث العروض على واتساب.</p>
+ <form id="nf"><input id="ph" type="tel" placeholder="05xxxxxxxx" required aria-label="رقم الجوال"><button class="btn" type="submit">اشترك</button></form>
+</div></section>
+
+</main>
+<main id="prodView" hidden><div class="wrap"><div class="crumb"><a href="#/">الرئيسية</a> / <span id="bcP"></span></div><div class="pg" id="pg"></div></div></main>
+<main id="adView" hidden><div class="wrap"><div class="crumb"><a href="#/">الرئيسية</a> / التحكم بالتوفر</div><div id="adm" style="padding-bottom:50px"></div></div></main>
+<main id="coView" hidden><div class="wrap"><div class="crumb"><a href="#/">الرئيسية</a> / الدفع</div><div class="co" id="co"></div></div></main>
+<footer id="contact"><div class="wrap">
+ <div class="fg">
+  <div><h4>مراعي تيماء</h4><p>متجر سعودي متخصص في الذبائح واللحوم الطازجة البلدية، من مراعينا في تيماء إلى موائد منطقة تبوك.</p><p style="margin-top:10px"><a class="btn" href="https://wa.me/966550368909">اطلب عبر واتساب</a></p></div>
+  <div><h4>روابط</h4><ul><li><a href="#/products">المنتجات</a></li><li><a href="#/how">طريقة الطلب</a></li><li><a href="#/why">لماذا نحن</a></li></ul></div>
+  <div><h4>أوقات العمل</h4><ul><li>السبت – الخميس: ٧ ص – ١٠ م</li><li>الجمعة: ٢ م – ١٠ م</li><li>آخر موعد لطلبات اليوم: ٨ م</li></ul></div>
+  <div><h4>تواصل معنا</h4><ul><li><a href="tel:0550368909" dir="ltr">0550368909</a></li><li>تيماء — طريق تبوك</li><li><a href="mailto:order@maraitayma.sa">order@maraitayma.sa</a></li></ul></div>
+ </div>
+ <div class="copy">© 2026 مراعي تيماء · الحقوق محفوظة: أبو ساهر الشافعي · الأسعار شاملة ضريبة القيمة المضافة</div>
+</div></footer>
+
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer" aria-label="سلة المشتريات">
+ <div class="dh"><span>سلة المشتريات</span><button id="closeCart" aria-label="إغلاق">×</button></div>
+ <div class="items" id="items"></div>
+ <div class="df"><div class="tot"><span>الإجمالي</span><span id="total">0 ر.س</span></div>
+  <a class="btn" id="checkout" href="#">إتمام الطلب عبر واتساب</a>
+  <p style="font-size:13px;color:var(--mut);margin-top:8px;text-align:center">سيُفتح واتساب وفيه تفاصيل طلبك لتأكيدها معنا</p></div>
+</aside>
+<div class="toast" id="toast">أُضيف إلى السلة</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+// ===== عدّل المنتجات والأسعار من هنا =====
+const WA="966550368909";
+// ===== إعدادات Firebase: Project settings > Your apps > Web app، انسخ القيم هنا =====
+const FB_CFG={apiKey:"",authDomain:"",projectId:"",appId:""};
+let db=null,auth=null;
+try{if(FB_CFG.apiKey&&window.firebase){firebase.initializeApp(FB_CFG);db=firebase.firestore();auth=firebase.auth()}}catch(e){console.warn("Firebase",e)}
+const SERVICES=[ // p = سعر الخدمة (0 = مجانًا)
+ {n:"ثلاجه",p:0},{n:"تقطيع أثمان",p:0},{n:"تفصيل عادي",p:0},{n:"تفصيل حضرمي",p:0},
+ {n:"أرباع - أربع قطع",p:0},{n:"مفطح",p:0},{n:"غوزي - كامل",p:0},{n:"التوصيل لمكان محدد",p:0}];
+const PACK=[{n:"بدون تغليف",p:0},{n:"تغليف",p:0}];
+const HEAD=[{n:"سلخ"},{n:"بدون راس"},{n:"شلوطه"}];
+const P=[
+ {id:"najdi",n:"نجدي",c:"najdi",e:"🐑",d:"",sizes:[["جذع طيب",1950],["جذع وسط",1800],["هرفي صغير",1500],["هرفي وسط",1700]]},
+ {id:"hari",n:"حري",c:"hari",e:"🐏",d:"",sizes:[["جذع طيب",2050],["جذع وسط",1800],["هرفي صغير",1500],["هرفي وسط",1950]]},
+ {id:"naimi",n:"نعيمي بلدي",c:"naimi",e:"🐑",d:"الوزن التقريبي 16–18 كجم",sizes:[["كامل",1150]]},
+ {id:"teos",n:"تيوس عارضية",c:"teos",e:"🐐",d:"",sizes:[["تيس طيب",2300]]}
+];
+// ===== التوفر والأسعار تُدار الآن من #/admin وتُحفظ في Firebase (هذه القيم احتياطية فقط) =====
+// أمثلة: "najdi" (ذبيحة كاملة) · "najdi:جذع طيب" (حجم) · "svc:ثلاجه" (خدمة) · "pack:تغليف" · "head:شلوطه"
+let OFF=[];
+// =========================================
+const off=k=>OFF.includes(k);
+const $=s=>document.querySelector(s),fmt=n=>Number(n).toLocaleString("en")+" ر.س";
+let cart=JSON.parse("[]"),cat="all",sel={};
+const grid=$("#grid");
+const pOff=x=>off(x.id)||x.sizes.every(z=>off(x.id+":"+z[0]));
+function render(){
+ grid.innerHTML=P.filter(x=>cat==="all"||x.c===cat).map(x=>`
+ <article class="card ${pOff(x)?"offc":""}"><div class="img">${x.e}</div><div class="b"><h3>${x.n}</h3>
+ <div class="w">${x.d||"شامل الذبح والتجهيز"}</div>
+ <div class="price">ابتداءً من ${fmt(Math.min(...x.sizes.map(s=>s[1])))}</div>
+ ${pOff(x)?'<button class="btn" disabled>غير متوفر حاليًا</button>':`<a class="btn" style="text-align:center" href="#/p/${x.id}">اختر الخيارات</a>`}</div></article>`).join("");
+}
+// ---- صفحة المنتج
+const total=s=>(s.sizeP+s.svc.reduce((a,i)=>a+SERVICES[i].p,0)+PACK[s.pack].p)*s.q;
+function prodPage(id){
+ const x=P.find(p=>p.id===id);if(!x){location.hash="#/";return}
+ if(!sel[id])sel[id]={size:0,sizeP:0,svc:[],pack:0,head:0,q:1};
+ const s=sel[id],ok=(arr,pre,i)=>!off(pre+arr[i]);
+ if(off(id+":"+x.sizes[s.size][0])){const f=x.sizes.findIndex(z=>!off(id+":"+z[0]));if(f>=0)s.size=f}
+ if(off("pack:"+PACK[s.pack].n))s.pack=Math.max(0,PACK.findIndex(z=>!off("pack:"+z.n)));
+ if(off("head:"+HEAD[s.head].n))s.head=Math.max(0,HEAD.findIndex(z=>!off("head:"+z.n)));
+ s.svc=s.svc.filter(i=>!off("svc:"+SERVICES[i].n));
+ s.sizeP=x.sizes[s.size][1];
+ const gone=pOff(x);
+ const o=(arr,fn,on,keys)=>arr.map((v,i)=>{const d=off(keys[i]);return `<div class="opt ${on(i)&&!d?"on":""} ${d?"off":""}" ${d?'aria-disabled="true"':`tabindex="0" role="button" onclick="${fn}(${i})"`}>${v}${d?"<small>غير متوفر</small>":""}</div>`}).join("");
+ $("#bcP").textContent=x.n;
+ $("#pg").innerHTML=`<div class="pimg">${x.e}</div><div>
+ <div class="box"><div class="pt">${x.n}</div><div class="pp">${fmt(total(s)/s.q)}</div>${x.d?`<p>${x.d}</p>`:""}
+ <div class="sub">الحجم</div><div class="opts">${o(x.sizes.map(z=>`${z[0]} - ${fmt(z[1])}`),"pickSize",i=>s.size===i,x.sizes.map(z=>id+":"+z[0]))}</div>
+ <div class="sub">الخدمات الإضافية</div><div class="opts">${o(SERVICES.map(z=>z.n+(z.p?` +${z.p}`:"")),"tog",i=>s.svc.includes(i),SERVICES.map(z=>"svc:"+z.n))}</div>
+ <div class="sub">التغليف</div><div class="opts">${o(PACK.map(z=>z.n+(z.p?` +${z.p}`:"")),"pickp",i=>s.pack===i,PACK.map(z=>"pack:"+z.n))}</div>
+ <div class="sub">الرأس</div><div class="opts">${o(HEAD.map(z=>z.n),"pickh",i=>s.head===i,HEAD.map(z=>"head:"+z.n))}</div>
+ <div class="sub">حقائق عن طلبك</div><div class="note">التوصيل متاح حاليًا داخل تيماء ونعمل على التوسع للمناطق القريبة.</div>
+ <div class="qty"><button onclick="qty(-1)" aria-label="إنقاص">−</button><b>${s.q}</b><button onclick="qty(1)" aria-label="زيادة">+</button><span style="margin-right:auto;font-weight:800;font-size:20px">${fmt(total(s))}</span></div>
+ ${gone?'<div class="note" style="background:#fdeceb;border-color:#f3b8b4">هذه الذبيحة غير متوفرة حاليًا.</div><button class="btn big" disabled>غير متوفر</button>':'<button class="btn big" onclick="addCart()">أضف للسلة</button>'}</div></div>`;
+ window.curP=x;
+}
+function pickSize(i){sel[curP.id].size=i;prodPage(curP.id)}
+function tog(i){const a=sel[curP.id].svc,k=a.indexOf(i);k<0?a.push(i):a.splice(k,1);prodPage(curP.id)}
+function pickp(i){sel[curP.id].pack=i;prodPage(curP.id)}
+function pickh(i){sel[curP.id].head=i;prodPage(curP.id)}
+function qty(d){const s=sel[curP.id];s.q=Math.max(1,s.q+d);prodPage(curP.id)}
+function addCart(){
+ const x=curP,s=sel[x.id];if(pOff(x))return;
+ cart.push({n:x.n,size:x.sizes[s.size][0],svc:s.svc.map(i=>SERVICES[i].n),pack:PACK[s.pack].n,head:HEAD[s.head].n,q:s.q,t:total(s)});
+ upd();toast();cartOpen(true);
+}
+// ---- السلة
+function rm(i){cart.splice(i,1);upd();if(location.hash==="#/checkout")coPage()}
+const desc=i=>`${i.size}${i.svc.length?" · "+i.svc.join("، "):""} · ${i.pack} · ${i.head}`;
+const sum=()=>cart.reduce((a,i)=>a+i.t,0);
+function upd(){
+ $("#cnt").textContent=cart.reduce((a,i)=>a+i.q,0);
+ $("#total").textContent=fmt(sum());
+ $("#items").innerHTML=cart.length?cart.map((i,k)=>`<div class="it"><div>${i.n} × ${i.q}<small>${desc(i)}</small></div><div>${fmt(i.t)}<br><button onclick="rm(${k})">حذف</button></div></div>`).join(""):'<div class="empty">السلة فارغة. اختر ذبيحتك من المنتجات.</div>';
+}
+$("#checkout").onclick=e=>{e.preventDefault();if(!cart.length)return;cartOpen(false);location.hash="#/checkout"};
+// ---- الدفع
+let loc="";
+function coPage(){
+ if(!cart.length){$("#co").innerHTML='<div class="box empty" style="grid-column:1/-1">السلة فارغة. <a href="#/products" style="color:var(--gold)">تصفح الذبائح</a></div>';return}
+ $("#co").innerHTML=`<div>
+ <div class="box"><h3>معلومات التواصل</h3><div class="two2">
+ <div class="f"><label for="nm">الاسم بالكامل</label><input id="nm" placeholder="ادخل اسمك هنا"></div>
+ <div class="f"><label for="ph2">رقم الهاتف</label><input id="ph2" type="tel" dir="ltr" placeholder="05x xxx xxxx"></div></div></div>
+ <div class="box"><h3>معلومات التوصيل</h3><div class="f"><label for="ad">العنوان التفصيلي</label><input id="ad" placeholder="الحي، الشارع، أقرب معلم"></div>
+ <button class="loc" type="button" onclick="geo()">📍 تحديد موقعي</button> <span id="gs" style="font-size:13px"></span>
+ <div class="warn">التوصيل متاح داخل تيماء فقط حاليًا.</div></div>
+ <div class="box"><h3>الملاحظات</h3><div class="f"><textarea id="nt" rows="3" placeholder="أي متطلبات خاصة أو تعليمات للتوصيل (اختياري)"></textarea></div></div>
+ <div class="box"><h3>طريقة الدفع</h3><div class="opts" id="pay">
+ <div class="opt on" tabindex="0" data-v="الدفع عند الاستلام">الدفع عند الاستلام</div><div class="opt" tabindex="0" data-v="تحويل بنكي">تحويل بنكي</div></div></div>
+ <div class="box"><h3>خيارات الطلب</h3><div class="opts" id="typ" style="grid-template-columns:1fr">
+ <div class="opt on" tabindex="0" data-v="طلب لمرة واحدة">طلب لمرة واحدة</div><div class="opt" tabindex="0" data-v="اشتراك شهري">اشتراك شهري</div></div>
+ <label class="chk"><input type="checkbox" id="ag"> أوافق على سياسة الخصوصية وشروط الاستخدام</label>
+ <button class="btn big" onclick="send()">تأكيد الطلب عبر واتساب</button></div></div>
+ <div class="box sum"><h3>ملخص المنتجات</h3>${cart.map((i,k)=>`<div class="sr"><div>${i.n} × ${i.q}<small>${desc(i)}</small><button style="border:0;background:none;color:#b3261e;cursor:pointer" onclick="rm(${k})">حذف</button></div><b>${fmt(i.t)}</b></div>`).join("")}
+ <div class="sr"><span>المجموع الفرعي</span><span>${fmt(sum())}</span></div><div class="sr" style="font-weight:800;font-size:18px;border:0"><span>الإجمالي</span><span>${fmt(sum())}</span></div></div>`;
+ ["pay","typ"].forEach(id=>$("#"+id).onclick=e=>{const b=e.target.closest(".opt");if(!b)return;[...$("#"+id).children].forEach(c=>c.classList.toggle("on",c===b))});
+}
+function geo(){
+ if(!navigator.geolocation){$("#gs").textContent="المتصفح لا يدعم تحديد الموقع";return}
+ $("#gs").textContent="جارٍ التحديد...";
+ navigator.geolocation.getCurrentPosition(p=>{loc=`https://maps.google.com/?q=${p.coords.latitude},${p.coords.longitude}`;$("#gs").textContent="تم تحديد موقعك ✓"},()=>{$("#gs").textContent="تعذّر التحديد، اكتب العنوان يدويًا"});
+}
+let sending=false;
+function send(){
+ if(sending)return;
+ const nm=$("#nm").value.trim(),ph=$("#ph2").value.trim(),ad=$("#ad").value.trim();
+ if(!nm||!ph||!(ad||loc)){alert("فضلاً أكمل الاسم ورقم الهاتف والعنوان");return}
+ if(!$("#ag").checked){alert("فضلاً وافق على سياسة الخصوصية وشروط الاستخدام");return}
+ const v=id=>$("#"+id+" .on").dataset.v,nt=$("#nt").value.trim();
+ const no="M"+Date.now().toString(36).toUpperCase().slice(-6);
+ const m=`السلام عليكم، طلب جديد من الموقع (رقم ${no}):\n\n`+cart.map(i=>`• ${i.n} × ${i.q}\n  ${desc(i)}\n  ${fmt(i.t)}`).join("\n")+
+ `\n\nالإجمالي: ${fmt(sum())}\nالاسم: ${nm}\nالجوال: ${ph}\nالعنوان: ${ad}${loc?"\nالموقع: "+loc:""}\nالدفع: ${v("pay")}\nنوع الطلب: ${v("typ")}${nt?"\nملاحظات: "+nt:""}`;
+ const wa=`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+ window.open(wa,"_blank");
+ if(!db)return;
+ sending=true;
+ const order={no,items:cart.map(i=>({n:i.n,size:i.size,svc:i.svc,pack:i.pack,head:i.head,q:i.q,t:i.t})),total:sum(),name:nm,phone:ph,address:ad,location:loc,pay:v("pay"),type:v("typ"),notes:nt,status:"new",createdAt:firebase.firestore.FieldValue.serverTimestamp()};
+ Promise.race([db.collection("orders").doc(no).set(order),new Promise((_,r)=>setTimeout(()=>r(new Error("timeout")),10000))])
+ .then(()=>{cart=[];upd();$("#co").innerHTML=`<div class="box" style="grid-column:1/-1;text-align:center"><h3 style="text-align:right">تم استلام طلبك</h3><p>رقم طلبك: <b>${no}</b></p><p style="color:var(--mut);margin:8px 0 14px">أكمل تأكيد الطلب عبر واتساب إن لم يُفتح تلقائيًا.</p><a class="btn" href="${wa}" target="_blank" rel="noopener">فتح واتساب</a> <a class="btn" href="#/" style="background:var(--g);color:#fff">الرئيسية</a></div>`})
+ .catch(e=>{console.warn(e);alert("تعذّر حفظ الطلب في النظام، لكن يمكنك إكمال الطلب عبر واتساب.")})
+ .finally(()=>{sending=false});
+}
+// ---- عام
+function toast(){const t=$("#toast");t.classList.add("on");setTimeout(()=>t.classList.remove("on"),1500)}
+function cartOpen(o){$("#drawer").classList.toggle("on",o);$("#ov").classList.toggle("on",o)}
+$("#openCart").onclick=()=>cartOpen(true);
+$("#closeCart").onclick=$("#ov").onclick=()=>cartOpen(false);
+$("#menu").onclick=()=>$("#nav").classList.toggle("on");
+$("#nav").onclick=()=>$("#nav").classList.remove("on");
+$("#tabs").onclick=e=>{const b=e.target.closest("button");if(!b)return;cat=b.dataset.c;document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("on",x===b));render()};
+$("#nf").onsubmit=e=>{e.preventDefault();window.open(`https://wa.me/${WA}?text=${encodeURIComponent("أرغب بالاشتراك في العروض، رقمي: "+$("#ph").value)}`,"_blank")};
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("opt")){e.preventDefault();e.target.click()}});
+// slider
+const sl=[...document.querySelectorAll(".slide")],dt=$("#dots");let cur=0;
+sl.forEach((_,i)=>{const b=document.createElement("button");b.setAttribute("aria-label","شريحة "+(i+1));b.onclick=()=>go(i);dt.appendChild(b)});
+function go(i){cur=i;sl.forEach((s,k)=>s.classList.toggle("on",k===i));[...dt.children].forEach((b,k)=>b.classList.toggle("on",k===i))}
+go(0);setInterval(()=>go((cur+1)%sl.length),6000);
+// ---- لوحة التحكم (Firebase)
+const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const defP={};P.forEach(x=>x.sizes.forEach(z=>defP[x.id+":"+z[0]]=z[1]));SERVICES.forEach(z=>defP["svc:"+z.n]=z.p);PACK.forEach(z=>defP["pack:"+z.n]=z.p);
+let catLoaded=false,admTab="orders",unsubOrd=()=>{};
+function applyCat(c){
+ OFF=c.off||[];const pr=c.prices||{},g=(k)=>pr[k]!=null?Math.max(0,Number(pr[k])||0):defP[k];
+ P.forEach(x=>x.sizes.forEach(z=>z[1]=g(x.id+":"+z[0])));SERVICES.forEach(z=>z.p=g("svc:"+z.n));PACK.forEach(z=>z.p=g("pack:"+z.n));
+ $("#heroP").textContent=fmt(P.find(x=>x.id==="naimi").sizes[0][1]);
+ render();if(!$("#prodView").hidden&&window.curP)prodPage(curP.id);
+}
+function admPage(){
+ const A=$("#adm");
+ if(!db){A.innerHTML='<div class="box"><h3>Firebase غير مفعّل</h3><p>ضع إعدادات مشروعك في <code>FB_CFG</code> أعلى السكربت لتفعيل لوحة التحكم وحفظ الطلبات.</p></div>';return}
+ if(!auth.currentUser){
+  A.innerHTML=`<div class="box" style="max-width:420px;margin:auto"><h3>دخول المدير</h3><form id="lf"><div class="f"><label for="em">البريد الإلكتروني</label><input id="em" type="email" dir="ltr" required></div><div class="f"><label for="pw">كلمة المرور</label><input id="pw" type="password" dir="ltr" required></div><button class="btn" type="submit" style="width:100%">دخول</button><div class="aerr" id="le"></div></form></div>`;
+  $("#lf").onsubmit=e=>{e.preventDefault();auth.signInWithEmailAndPassword($("#em").value.trim(),$("#pw").value).catch(()=>{$("#le").textContent="بيانات الدخول غير صحيحة"})};
+  return}
+ dash();
+}
+function dash(){
+ unsubOrd();
+ const A=$("#adm"),t=(k,n)=>`<button data-t="${k}" class="${admTab===k?"on":""}">${n}</button>`;
+ A.innerHTML=`<div class="tabs" id="at" style="margin-bottom:16px">${t("orders","الطلبات")}${t("prices","الأسعار والتوفر")}<button id="lo" style="margin-inline-start:auto">تسجيل الخروج</button></div><div id="adb"></div>`;
+ $("#at").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.id==="lo"){auth.signOut();return}admTab=b.dataset.t;dash()};
+ admTab==="orders"?ordTab():priceTab();
+}
+const ST={new:"جديد",confirmed:"مؤكد",delivered:"تم التوصيل",canceled:"ملغي"};
+function ordCard(d){
+ const o=d.data(),t=o.createdAt&&o.createdAt.toDate?o.createdAt.toDate().toLocaleString("ar-SA"):"",ph=String(o.phone||"").replace(/\D/g,"");
+ const wa=ph?"https://wa.me/"+ph.replace(/^0/,"966"):"",lk=/^https:\/\/maps\.google\.com\//.test(o.location||"")?o.location:"";
+ return `<div class="box ord st-${esc(o.status)}"><div class="oh"><b>#${esc(o.no||d.id)}</b>
+ <select data-id="${esc(d.id)}" aria-label="حالة الطلب">${Object.entries(ST).map(([k,v])=>`<option value="${k}" ${o.status===k?"selected":""}>${v}</option>`).join("")}</select><span>${esc(t)}</span></div>
+ <div>${esc(o.name)} · <a dir="ltr" href="tel:${esc(ph)}">${esc(o.phone)}</a>${wa?` · <a href="${wa}" target="_blank" rel="noopener">واتساب</a>`:""}</div>
+ <div>${esc(o.address)}${lk?` · <a href="${esc(lk)}" target="_blank" rel="noopener">الخريطة</a>`:""}</div>
+ ${(o.items||[]).map(i=>`<div class="sr"><div>${esc(i.n)} × ${esc(i.q)}<small>${esc([i.size,...(i.svc||[]),i.pack,i.head].join(" · "))}</small></div><b>${fmt(i.t)}</b></div>`).join("")}
+ <div class="sr" style="border:0"><span>${esc(o.pay)} · ${esc(o.type)}</span><b>${fmt(o.total)}</b></div>${o.notes?`<div class="note">${esc(o.notes)}</div>`:""}</div>`;
+}
+function ordTab(){
+ const B=$("#adb");B.innerHTML='<div class="empty">جارٍ تحميل الطلبات...</div>';
+ unsubOrd=db.collection("orders").orderBy("createdAt","desc").limit(100).onSnapshot(q=>{
+  B.innerHTML=q.empty?'<div class="empty">لا توجد طلبات بعد.</div>':q.docs.map(ordCard).join("");
+ },e=>{B.innerHTML='<div class="box aerr">لا تملك صلاحية عرض الطلبات. تأكد من الدخول بحساب المدير ومن قواعد Firestore.</div>'});
+ B.onchange=e=>{const x=e.target.closest("select[data-id]");if(x)db.collection("orders").doc(x.dataset.id).update({status:x.value}).catch(()=>alert("تعذّر تحديث الحالة"))};
+}
+function priceTab(){
+ const row=(k,n,p)=>`<label class="${off(k)?"x":""}"><input type="checkbox" data-k="${esc(k)}" ${off(k)?"":"checked"}><span>${esc(n)}</span>${p==null?"":`<input class="pi" type="number" min="0" step="1" dir="ltr" data-p="${esc(k)}" value="${p}" aria-label="سعر ${esc(n)}">`}</label>`;
+ const grp=[["الذبائح والأحجام (السعر بالريال)",P.flatMap(x=>[row(x.id,x.n+" (كامل)"),...x.sizes.map(z=>row(x.id+":"+z[0],x.n+" — "+z[0],z[1]))])],
+  ["الخدمات الإضافية (السعر المضاف)",SERVICES.map(z=>row("svc:"+z.n,z.n,z.p))],["التغليف",PACK.map(z=>row("pack:"+z.n,z.n,z.p))],["الرأس",HEAD.map(z=>row("head:"+z.n,z.n))]];
+ const B=$("#adb");
+ B.innerHTML=`<div class="box"><h3>الأسعار والتوفر</h3><p style="margin-bottom:6px">العلامة = متوفر. أزلها لإخفاء الخيار. عدّل السعر ثم اضغط حفظ، وتظهر التغييرات للزبائن فورًا.</p>
+ ${grp.map(([t,a])=>`<div class="sub">${t}</div><div class="ad">${a.join("")}</div>`).join("")}
+ <div class="savebar"><button class="btn" id="sv">حفظ التغييرات</button> <span id="svs" style="margin-right:10px"></span></div></div>`;
+ B.onchange=e=>{const l=e.target.closest("label");if(l&&e.target.dataset.k)l.classList.toggle("x",!e.target.checked)};
+ $("#sv").onclick=()=>{
+  if(!catLoaded){$("#svs").textContent="انتظر لحظة حتى تُحمَّل الإعدادات الحالية";return}
+  const offL=[...B.querySelectorAll("[data-k]")].filter(i=>!i.checked).map(i=>i.dataset.k),prices={};
+  B.querySelectorAll("[data-p]").forEach(i=>prices[i.dataset.p]=Math.max(0,Number(i.value)||0));
+  $("#svs").textContent="جارٍ الحفظ...";
+  db.collection("settings").doc("catalog").set({off:offL,prices,updatedAt:firebase.firestore.FieldValue.serverTimestamp()})
+  .then(()=>$("#svs").textContent="تم الحفظ ✓").catch(()=>$("#svs").textContent="تعذّر الحفظ، تحقق من الصلاحيات");
+ };
+}
+// router
+function route(){
+ const r=location.hash.replace(/^#\/?/,"");
+ const v=r.startsWith("p/")?"prodView":r==="checkout"?"coView":r==="admin"?"adView":"homeView";
+ if(v!=="adView")unsubOrd();
+ ["homeView","prodView","coView","adView"].forEach(id=>$("#"+id).hidden=id!==v);
+ if(v==="prodView")prodPage(r.slice(2));
+ if(v==="coView")coPage();
+ if(v==="adView")admPage();
+ if(v==="homeView"&&r&&r!=="/"){setTimeout(()=>{const t=document.getElementById(r);t&&t.scrollIntoView()},30)}else window.scrollTo(0,0);
+}
+addEventListener("hashchange",route);
+if(db){
+ db.collection("settings").doc("catalog").onSnapshot(d=>{catLoaded=true;if(d.exists)applyCat(d.data())},e=>{catLoaded=true;console.warn(e)});
+ auth.onAuthStateChanged(()=>{if(location.hash==="#/admin")admPage()});
+}
+render();upd();route();
+</script>
+</body>
+</html>
